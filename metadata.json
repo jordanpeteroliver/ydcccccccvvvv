@@ -1,0 +1,5 @@
+{
+  "name": "Downloader de Mídia do YouTube",
+  "description": "Uma interface de usuário elegante e funcional para simular o download de vídeos e áudios do YouTube. Este é um protótipo de UI e não realiza downloads reais.",
+  "requestFramePermissions": []
+}

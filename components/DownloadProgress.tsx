@@ -45,14 +45,14 @@ export const DownloadProgress: React.FC<DownloadProgressProps> = ({ download, on
   const { bgColor, textColor, icon, message } = getStatusInfo();
 
   return (
-    <div className="fixed bottom-4 right-4 w-full max-w-md bg-gray-800/80 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700/50 text-white p-4 animate-fade-in-up z-50">
+    <div className="fixed bottom-4 right-4 w-full max-w-md bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700/50 text-gray-900 dark:text-white p-4 animate-fade-in-up z-50 transition-colors duration-300">
       <div className="flex items-center gap-4">
         <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${bgColor} ${textColor}`}>
           {icon}
         </div>
         <div className="flex-1 overflow-hidden">
           <p className="font-semibold truncate" title={fileName}>{fileName}</p>
-          <div className="mt-1.5 h-2 w-full bg-gray-600 rounded-full overflow-hidden">
+          <div className="mt-1.5 h-2 w-full bg-gray-300 dark:bg-gray-600 rounded-full overflow-hidden">
             <div
               className={`${bgColor} h-full rounded-full transition-all duration-300 ease-linear`}
               style={{ width: `${progress}%` }}
@@ -61,7 +61,7 @@ export const DownloadProgress: React.FC<DownloadProgressProps> = ({ download, on
         </div>
         <div className="text-sm font-mono w-16 text-right">{message}</div>
         {status === 'downloading' && (
-          <button onClick={onCancel} className="text-gray-400 hover:text-white transition-colors" aria-label="Cancelar download">
+          <button onClick={onCancel} className="text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors" aria-label="Cancelar download">
             <XCircleIcon className="w-6 h-6" />
           </button>
         )}

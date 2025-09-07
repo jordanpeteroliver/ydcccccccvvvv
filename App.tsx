@@ -3,7 +3,9 @@ import { GoogleGenAI, Type, Chat } from "@google/genai";
 // FIX: The v9 modular imports for Firestore were causing errors. They have been removed.
 // import { collection, query, onSnapshot, addDoc, serverTimestamp, orderBy, getDocs, writeBatch } from 'firebase/firestore';
 // FIX: Import firebase/compat/app to use FieldValue.serverTimestamp() from the v8 compat SDK.
+// FIX: Changed to default import and added firestore compat for side-effects to fix firebase.firestore access.
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 import { useAuth } from './contexts/AuthContext';
 import { db } from './firebase';
 

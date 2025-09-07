@@ -2,7 +2,9 @@ import React, { createContext, useContext, useEffect, useState, ReactNode } from
 // FIX: The v9 modular imports for auth were causing errors.
 // import { User, onAuthStateChanged } from 'firebase/auth';
 // FIX: Import firebase/compat/app to use the v8 compat User type.
+// FIX: Changed to default import and added auth compat for side-effects to fix firebase.User type.
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import { auth } from '../firebase';
 
 interface AuthContextType {
